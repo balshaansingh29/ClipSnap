@@ -18,7 +18,7 @@ Native Swift & SwiftUI • macOS 14+ • Zero dependencies • 100% offline & pr
 
 ### 🎬 Product Demo
 
-https://github.com/balshaansingh29/ClipSnap/raw/main/assets/ClipSnap-product-video.mp4
+https://github.com/user-attachments/assets/b14356a2-1823-4414-8609-a0448e20c722
 
 ---
 
