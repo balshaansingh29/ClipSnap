@@ -1,74 +1,129 @@
-# ClipSnap
+<div align="center">
 
-One menu bar icon, two tools: a searchable **clipboard history** and a **window snapper**.
-Native Swift/SwiftUI, macOS 14+, no third-party dependencies, no network access.
+<img src="assets/ClipSnap-mascot.png" alt="ClipSnap Mascot" width="180" />
 
-## Build and run
+# ✂️ ClipSnap 🪟
+
+**One menu bar icon, two superpowers:** a lightning-fast **clipboard manager** and an intuitive **window snapper** for macOS.
+
+Native Swift & SwiftUI • macOS 14+ • Zero dependencies • 100% offline & private
+
+[![Release](https://img.shields.io/github/v/release/balshaansingh29/ClipSnap?label=Release&color=blue&style=flat-square)](https://github.com/balshaansingh29/ClipSnap/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-14.0%2B-black?style=flat-square&logo=apple)](https://www.apple.com/macos/)
+[![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+[📦 Download ClipSnap v1.0 (.dmg)](https://github.com/balshaansingh29/ClipSnap/releases/download/v1/ClipSnap-v1.dmg) • [✨ Features](#-features) • [🚀 Getting Started](#-getting-started) • [⌨️ Shortcuts](#-shortcuts)
+
+---
+
+</div>
+
+## ✨ Features
+
+### 📋 Smart Clipboard History
+- 🔍 **Instant Search:** Type to filter through text, rich text (RTF), and image clips in real-time.
+- 📌 **Pin Favorites:** Pin frequently used clips to keep them at the top of your list.
+- ⚡️ **Quick Paste:** Press `⌘1`–`⌘9` to paste items immediately, or `⌥↩` for plain text.
+- 🛡️ **App Exclusion:** Automatically ignores sensitive apps like password managers.
+
+### 🪟 Seamless Window Snapping
+- 📐 **Flexible Layouts:** Snap windows into halves, thirds, two-thirds, quarters, or full screen.
+- 🔄 **Cycle Sizes:** Repeat half or third shortcuts to effortlessly cycle through `½` → `⅔` → `⅓`.
+- 🧲 **Edge & Corner Drag:** Drag windows to display edges or corners with live footprint previews.
+- 👋 **Shake to Snap:** Shake your cursor while dragging a window to summon a quick layout palette right at your pointer.
+
+### 🎨 Delightful Details
+- 🐾 **Snip the Mascot:** An interactive, code-rendered companion that blinks, rests when paused, and celebrates your copies!
+- 🔔 **Subtle HUD:** Minimal floating feedback badges confirm your paste or snap actions.
+- 🧭 **Interactive Welcome Tour:** First-launch walkthrough to help you get productive in seconds.
+
+---
+
+## 🚀 Getting Started
+
+### 📥 Option 1: Download Release (Recommended)
+
+1. Grab the latest [**ClipSnap v1.0 DMG**](https://github.com/balshaansingh29/ClipSnap/releases/download/v1/ClipSnap-v1.dmg).
+2. Open `ClipSnap-v1.dmg` and drag **ClipSnap** to your **Applications** folder.
+3. Launch ClipSnap from Applications or Spotlight.
+
+> [!IMPORTANT]
+> **Accessibility Permission Required:**  
+> On first launch, grant **Accessibility** access under **System Settings → Privacy & Security → Accessibility**.  
+> This allows ClipSnap to reposition other application windows and synthesize `⌘V` paste commands.
+
+---
+
+### 🛠️ Option 2: Build from Source
+
+Requirements: macOS 14.0+ and Xcode Command Line Tools.
 
 ```bash
-./build.sh          # needs Xcode command line tools
+# Clone the repository
+git clone https://github.com/balshaansingh29/ClipSnap.git
+cd ClipSnap
+
+# Build universal application
+./build.sh
+
+# Launch the app
 open build/ClipSnap.app
 ```
 
-On first launch, grant **Accessibility** access (System Settings → Privacy & Security → Accessibility).
-It is needed to move other apps' windows and to send ⌘V when pasting.
-Global hotkeys and clipboard capture work without it.
+> [!TIP]
+> To preserve Accessibility permissions across local rebuilds, sign with a stable local certificate:  
+> `SIGN_ID="My Local Cert" ./build.sh`
 
-Ad-hoc signing (the default) makes macOS forget the Accessibility grant after each rebuild.
-To keep it, sign with a stable local certificate: `SIGN_ID="My Local Cert" ./build.sh`.
+---
 
-## Using it
+## ⌨️ Shortcuts
 
-- Click the icon (or press **⌃⇧V**) for the popover. Right-click or ⌥-click the icon for pause and quit.
-- **Clipboard:** type to filter, ↑/↓ to move, ↩ to paste, ⌥↩ or ⌥-click for plain text,
-  ⌘1–9 for quick paste, ⌘⌫ to delete, right-click to pin.
-- **Windows:** click a layout, use a global shortcut (⌃⌥ + arrows, U/I/J/K, D/F/G, ↩, C, ⌫),
-  or drag a window to an edge or corner. Repeat a half or third shortcut to cycle ½ → ⅔ → ⅓.
-
-## What was borrowed, and from where
-
-| Idea | Source |
+### 📋 Clipboard Controls
+| Action | Shortcut |
 |---|---|
-| Poll `NSPasteboard.changeCount` about every 0.4 s; skip transient and concealed types | Maccy (open source) |
-| Per-app exclusion list (password managers) | Maccy |
-| Paste via synthesized ⌘V, plain-text paste with ⌥ | Maccy |
-| Halves → thirds cycling on repeated shortcuts, restore, next display, almost-maximize | Rectangle (open source) |
-| Drag-to-edge snap with a footprint preview | Rectangle / Magnet |
-| Pinned clips, source-app icon and name, image clips, ⌘1–9 | Paste / PastePal (paid) |
-| Mini screen glyphs on each layout button | Magnet (paid) |
-| Unified popover with iOS-style tab bar, large titles, inset grouped settings | Raycast (paid) and iOS Settings |
+| Open ClipSnap Popover | `⌃` `⇧` `V` |
+| Filter clips | Type query |
+| Navigate list | `↑` / `↓` |
+| Paste selected item | `↩` |
+| Paste as plain text | `⌥` `↩` (or `⌥`-Click) |
+| Quick paste (items 1–9) | `⌘` `1`–`9` |
+| Pin / Unpin item | Right-Click |
+| Delete item | `⌘` `⌫` |
+| Pause / Resume capture | Right-Click menu bar icon |
 
-No code was copied from any of these apps; the behaviors were reimplemented from their public documentation.
+### 🪟 Window Snapping Controls
+| Layout Action | Shortcut |
+|---|---|
+| Left / Right Half (cycle `½` → `⅔` → `⅓`) | `⌃` `⌥` `←` / `→` |
+| Top / Bottom Half | `⌃` `⌥` `↑` / `↓` |
+| Quarters (Corners) | `⌃` `⌥` `U` / `I` / `J` / `K` |
+| Thirds (Left / Center / Right) | `⌃` `⌥` `D` / `F` / `G` |
+| Maximize | `⌃` `⌥` `↩` |
+| Center Window | `⌃` `⌥` `C` |
+| Restore Previous Frame | `⌃` `⌥` `⌫` |
 
-## Layout
+### 🧭 Navigation & Tabs
+| Action | Shortcut |
+|---|---|
+| Switch to Clipboard tab | `⌘` `⌥` `1` |
+| Switch to Windows tab | `⌘` `⌥` `2` |
+| Switch to Settings tab | `⌘` `⌥` `3` |
+
+---
+
+## 🏗️ Project Architecture
 
 ```
 Sources/ClipSnap/
-  Clipboard/  ClipItem, ClipStore (JSON + blob files), ClipboardMonitor, Paster
-  Snapper/    WindowAction (geometry), AXWindow (Accessibility wrapper), WindowManager,
-              DragSnapper (edge zones + overlay), ScreenGeometry (coordinate flipping)
-  Core/       AppDelegate (status item + popover), AppModel, HotkeyCenter (Carbon), Bindings, Settings
-  UI/         Theme (design tokens, shared components), RootView (tab bar), ClipboardView, SnapView, SettingsView
+├── Clipboard/      # ClipItem, ClipStore, ClipboardMonitor, Paster
+├── Snapper/        # WindowAction, AXWindow (Accessibility), DragSnapper, ScreenGeometry
+├── Core/           # AppDelegate, AppModel, HotkeyCenter, Bindings, Settings
+└── UI/             # Theme tokens, RootView, ClipboardView, SnapView, SettingsView, Mascot (Snip)
 ```
 
-## Personality and polish
+---
 
-- **Snip**, the mascot, is drawn in code (`UI/Mascot.swift`). It blinks, bobs, falls asleep when capture is paused,
-  perks up when you copy something, and looks surprised when a search finds nothing.
-- **Pop-up feedback** (`UI/HUD.swift`): a small floating "Pasted" / "Left Half" confirmation that appears even after the
-  popover closes. Turn it off in Settings.
-- **Welcome tour** on first launch (replay it from Settings), with the Accessibility prompt on the last step.
-- **Animations:** sliding tab highlight, directional tab transitions, staggered list entrance, springy presses,
-  hover previews on the Windows tab.
-- **Shake to snap:** while dragging a window, shake the mouse and a layout palette pops up at the cursor. Hover a tile to preview the region, release to snap. Dragging to a screen edge still works. Toggle in Settings.
-- **Popover entrance:** content eases down and fades in each time it opens.
-- **Paste shortcut:** ⌃⇧V always opens the Clipboard tab with a clean, focused search field; pressing it again closes the popover (or jumps back to Clipboard from another tab).
-- **Shortcuts:** ⌘⌥1/2/3 switch tabs while the popover is open.
+## 📄 License
 
-## Known limits and next steps
-
-- **Not yet compiled.** This was written without a Swift toolchain, so expect a few compile fixes on first build.
-- Shortcuts are a table in `Core/Bindings.swift`; there is no in-app shortcut recorder yet.
-- Only text, RTF and images are captured (no files or multi-item pastes).
-- History is stored unencrypted in `~/Library/Application Support/ClipSnap`.
-- Not sandboxed. The Accessibility API does not work inside the App Sandbox, so Mac App Store distribution is not possible.
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
