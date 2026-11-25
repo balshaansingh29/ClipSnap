@@ -11,9 +11,14 @@ Native Swift & SwiftUI • macOS 14+ • Zero dependencies • 100% offline & pr
 [![Release](https://img.shields.io/github/v/release/balshaansingh29/ClipSnap?label=Release&color=blue&style=flat-square)](https://github.com/balshaansingh29/ClipSnap/releases/latest)
 [![macOS](https://img.shields.io/badge/macOS-14.0%2B-black?style=flat-square&logo=apple)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 [📦 Download ClipSnap v1.0 (.dmg)](https://github.com/balshaansingh29/ClipSnap/releases/download/v1/ClipSnap-v1.dmg) • [✨ Features](#-features) • [🚀 Getting Started](#-getting-started) • [⌨️ Shortcuts](#-shortcuts)
+
+---
+
+### 🎬 Product Demo
+
+https://github.com/balshaansingh29/ClipSnap/raw/main/assets/ClipSnap-product-video.mp4
 
 ---
 
@@ -121,9 +126,3 @@ Sources/ClipSnap/
 ├── Core/           # AppDelegate, AppModel, HotkeyCenter, Bindings, Settings
 └── UI/             # Theme tokens, RootView, ClipboardView, SnapView, SettingsView, Mascot (Snip)
 ```
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
